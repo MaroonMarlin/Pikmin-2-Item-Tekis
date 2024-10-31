@@ -1,0 +1,15 @@
+// Add to libs.json and re-run configure.py to compile the new files. 
+// Newest version of decomp doesn't use libs.json, so do whatever you need to do to compile new files with the new version of decomp or backport to an older version before configure.py was changed.
+
+  {
+    "lib": "ItemTeki",
+    "cflags": "$cflags_pikmin -sym on",
+    "mw_version": "2.6",
+    "host": true,
+    "objects": [
+      ["ItemTeki/ItemTeki", true],
+      ["ItemTeki/ItemTekiMgr", true],
+      ["ItemTeki/ItemTekiAnimator", true],
+      ["ItemTeki/ItemTekiState", true]
+    ]
+  },

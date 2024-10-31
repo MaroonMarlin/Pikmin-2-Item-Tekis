@@ -1,0 +1,158 @@
+// There are some things that need to be placed in enemyinfo.h, enemyinfo.cpp, genenemy.cpp, and generalenemymgr.cpp for it to work.
+// If you have not edited these files, you can copy the edited files from the Decomp Files folder.
+// If you have edited these files, this file has the new code that needs to be placed inside each of them.
+
+
+
+
+// Place inside of the EEnemyTypeID enum in enemyinfo.h
+// Preferrably keep the list with the enemy ids ordered. Ids need to be changed if you're already using any id from -2 to -43
+
+	EnemyID_CarrotPikiHead = -43, //Buried Carrot Flower
+	EnemyID_ChappyPikiHead = -42, //Buried Bulbmin Flower
+	EnemyID_PurplePikiHead = -41, //Buried Purple Flower Pikmin
+	EnemyID_WhitePikiHead  = -40, //Buried White Flower Pikmin
+	EnemyID_YellowPikiHead = -39, //Buried Yellow Flower Pikmin
+	EnemyID_BluePikiHead   = -38, //Buried Blue Flower Pikmin
+	EnemyID_RedPikiHead    = -37, //Buried Red Flower Pikmin
+	EnemyID_CarrotPiki     = -36, //Wild Carrot Leaf
+	EnemyID_ChappyPiki     = -35, //Wild Bulbmin Leaf
+	EnemyID_PurplePiki     = -34, //Wild Purple Leaf Pikmin
+	EnemyID_WhitePiki	   = -33, //Wild White Leaf Pikmin
+	EnemyID_YellowPiki	   = -32, //Wild Yellow Leaf Pikmin
+	EnemyID_BluePiki	   = -31, //Wild Blue Leaf Pikmin
+	EnemyID_RedPiki		   = -30, //Wild Red Leaf Pikmin
+	EnemyID_YellowOnyon    = -29, //Yellow Onion
+	EnemyID_BlueOnyon      = -28, //Blue Onion
+	EnemyID_RedOnyon       = -27, //Red Onion
+	EnemyID_ShipOnyon      = -26, //Hocotate Ship
+	EnemyID_Pod            = -25, //Cave Ship Pod
+	EnemyID_Geyser         = -24, //Closed Geyser
+	EnemyID_Hole		   = -23, //Cave Hole, Crashes when entered with no proceeding floor.
+	EnemyID_PaperBag_200   = -22, //ID '0009', Paper Bag with 200 weight tolerance
+	EnemyID_PaperBag_100   = -21, //ID '0008', Paper Bag with 100 weight tolerance
+	EnemyID_PaperBag_80    = -20, //ID '0007', Paper Bag with 80 weight tolerance
+	EnemyID_PaperBag_40    = -19, //ID '0006', Paper Bag with 40 weight tolerance
+	EnemyID_PaperBag_20    = -18, //ID '0005', Paper Bag with 20 weight tolerance
+	EnemyID_PaperBag_10    = -17, //ID '0004', Paper Bag with 10 weight tolerance
+	EnemyID_DownfloorD     = -16, //ID '0003', Small Downfloor Block. First load starts up.
+	EnemyID_DownfloorC     = -15, //ID '0002', Small Downfloor Block. First load starts down.
+	EnemyID_DownfloorB     = -14, //ID '0001', Large Downfloor Block. First load starts up.
+	EnemyID_DownfloorA     = -13, //ID '0000', Large Downfloor Block. First load starts down. 
+	EnemyID_SpicyNectar    = -12, //Bitter Spray Drop
+	EnemyID_BitterNectar   = -11, //Spicy Spray Drop
+	EnemyID_Nectar         = -10, //Nectar Drop
+	EnemyID_GateHeavy      = -9,  //Black Gate with 9000HP
+	EnemyID_GateLight      = -8,  //White Gate with 4000HP
+	EnemyID_ElectricGate   = -7,  //Electric Gate with 3000HP
+	EnemyID_Barrel         = -6,  //Hole Clog
+	EnemyID_BridgeLong     = -5,  //Long Bridge Type
+	EnemyID_BridgeShort    = -4,  //Short Bridge Type
+	EnemyID_BridgeSloped   = -3,  //Sloped Bridge Type
+	EnemyID_ItemTeki       = -2,  //Parent ID, crashes if loaded
+
+
+// Paste all the following in gEnemyInfo on enemyinfo.cpp. Order shouldn't matter.
+
+	{"ItemTeki",           EnemyTypeID::EnemyID_ItemTeki,       -1,                                1,      (EFlag_HasNoInfo | EFlag_UseOwnID),														"ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"BridgeSloped",       EnemyTypeID::EnemyID_BridgeSloped,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"BridgeShort",        EnemyTypeID::EnemyID_BridgeShort,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"BridgeLong",         EnemyTypeID::EnemyID_BridgeLong,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"Barrel",             EnemyTypeID::EnemyID_Barrel,         EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"ElectricGate",       EnemyTypeID::EnemyID_ElectricGate,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"GateLight",          EnemyTypeID::EnemyID_GateLight,      EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"GateHeavy",          EnemyTypeID::EnemyID_GateHeavy,      EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"DownfloorA",         EnemyTypeID::EnemyID_DownfloorA,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"DownfloorB",         EnemyTypeID::EnemyID_DownfloorB,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"DownfloorC",         EnemyTypeID::EnemyID_DownfloorC,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"DownfloorD",         EnemyTypeID::EnemyID_DownfloorD,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_10",        EnemyTypeID::EnemyID_PaperBag_10,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_20",        EnemyTypeID::EnemyID_PaperBag_20,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_40",        EnemyTypeID::EnemyID_PaperBag_40,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_80",        EnemyTypeID::EnemyID_PaperBag_80,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_100",       EnemyTypeID::EnemyID_PaperBag_100,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PaperBag_200",       EnemyTypeID::EnemyID_PaperBag_200,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"RedOnyon",           EnemyTypeID::EnemyID_RedOnyon,       EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"YellowOnyon",        EnemyTypeID::EnemyID_YellowOnyon,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"BlueOnyon",          EnemyTypeID::EnemyID_BlueOnyon,      EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"ShipOnyon",          EnemyTypeID::EnemyID_ShipOnyon,      EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"Pod",                EnemyTypeID::EnemyID_Pod,            EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"Hole",               EnemyTypeID::EnemyID_Hole,           EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"Geyser",             EnemyTypeID::EnemyID_Geyser,         EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"Nectar",             EnemyTypeID::EnemyID_Nectar,         EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"BitterNectar",       EnemyTypeID::EnemyID_BitterNectar,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"SpicyNectar",        EnemyTypeID::EnemyID_SpicyNectar,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"RedPiki",            EnemyTypeID::EnemyID_RedPiki,        EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"BluePiki",           EnemyTypeID::EnemyID_BluePiki,       EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"YellowPiki",         EnemyTypeID::EnemyID_YellowPiki,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"WhitePiki",          EnemyTypeID::EnemyID_WhitePiki,      EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"PurplePiki",         EnemyTypeID::EnemyID_PurplePiki,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"ChappyPiki",         EnemyTypeID::EnemyID_ChappyPiki,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"CarrotPiki",         EnemyTypeID::EnemyID_CarrotPiki,     EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"RedPikiHead",        EnemyTypeID::EnemyID_RedPikiHead,    EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"BluePikiHead",       EnemyTypeID::EnemyID_BluePikiHead,   EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"YellowPikiHead",     EnemyTypeID::EnemyID_YellowPikiHead, EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"WhitePikiHead",      EnemyTypeID::EnemyID_WhitePikiHead,  EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+	{"PurplePikiHead",     EnemyTypeID::EnemyID_PurplePikiHead, EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"ChappyPikiHead",     EnemyTypeID::EnemyID_ChappyPikiHead, EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},	
+	{"CarrotPikiHead",     EnemyTypeID::EnemyID_CarrotPikiHead, EnemyTypeID::EnemyID_ItemTeki,     1,      (EFlag_HasNoInfo | EFlag_CanBeSpawned | 2),											    "ItemTeki",     "ItemTeki",     "ItemTeki",     "ItemTeki", "ItemTeki", "ItemTeki",     "ItemTeki",     -1,                               0,                       BDT_Empty},
+
+
+// Paste the following in the switch statement in createEnemyGenerator() in genEmeny.cpp
+
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BridgeSloped, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BridgeShort, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BridgeLong, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_Barrel, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_Hole, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_Geyser, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_ElectricGate, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_GateLight, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_GateHeavy, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_RedOnyon, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BlueOnyon, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_YellowOnyon, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_ShipOnyon, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_Pod, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_DownfloorA, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_DownfloorB, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_DownfloorC, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_DownfloorD, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_10, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_20, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_40, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_80, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_100, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PaperBag_200, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_Nectar, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BitterNectar, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_SpicyNectar, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_RedPiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BluePiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_YellowPiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_WhitePiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PurplePiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_ChappyPiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_CarrotPiki, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_RedPikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_BluePikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_YellowPikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_WhitePikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_PurplePikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_ChappyPikiHead, "ポポガシ草")
+		GENERATOR_CASE(EnemyTypeID::EnemyID_CarrotPikiHead, "ポポガシ草")
+
+
+// Place the next line under the line 'case EnemyTypeID::EnemyID_Pom:' in genEnemy.cpp
+
+	case EnemyTypeID::EnemyID_ItemTeki:
+
+// Include the following header in generalEnemyMgr.cpp
+
+	#include "Game/Entities/ItemTeki.h"
+
+// Add a new case in the switch statement inside createEnemyMgr in generalEnemyMgr.cpp
+
+	case EnemyTypeID::EnemyID_ItemTeki:
+		mgr = new ItemTeki::Mgr(limit, viewNum);
+		break;

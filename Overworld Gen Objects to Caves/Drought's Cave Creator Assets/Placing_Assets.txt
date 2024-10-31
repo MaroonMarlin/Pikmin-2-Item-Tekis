@@ -1,0 +1,4 @@
+// Place these files inside of your preset file in Drought's Cave Creator if you wish to use the new enemy ids in Drought's Cave Creator.
+// Anoter text file contains just the new lines of teki.json, so you don't need to replace an already modified teki.json file.
+
+// Gate, Onyon, Barrel, Pod, Hole, and Geyser images were taken from existing Drought's Cave Creator assets. So credit to DroughtEnder. Credit to Pikminwiki.com for Pikmin and Ship images.

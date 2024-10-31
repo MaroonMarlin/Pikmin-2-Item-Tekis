@@ -1,0 +1,44 @@
+Created by MaroonMarlin (please credit, thanks!)
+
+Decomp code that adds 46 enemy ids that spawn different items and objects that can normally only be spawned by overworld generation. All of the new enemy ids and a short explaination can be found in enemyinfo.h
+
+'Decomp Files' folder has all of the edited files that can be copy and pasted into a decomp directory.
+
+NEW FILES:
+	include/Game/Entities/ItemTeki.h
+	src/ItemTeki/ItemTeki.cpp
+	src/ItemTeki/ItemTekiMgr.cpp
+	src/ItemTeki/ItemTekiAnimator.cpp
+	src/ItemTeki/ItemTekiState.cpp
+
+MODIFIED FILES:
+	include/Game/enemyinfo.h
+	src/plugProjectYamashitaU/enemyinfo.cpp
+	src/plugProjectYamashitaU/genEnemy.cpp
+	src/plugProjectYamashitaU/generalEnemyMgr.cpp
+
+Make sure the new files are compiling. If you're using a version of decomp with libs.json, add the contents of 'Add_to_libs.json.txt' to libs.json.
+If you've already edited any of the files, the individual new code is inside 'Editing_Already_Modified_Files.txt'
+
+
+Several files need to be added to the dumped Pikmin 2 game files
+
+'itemteki' in 'Game Assets/parameters' needs to be added to enemy/parms/enemyParms.szs
+'ItemTeki' in 'Game Assets/model' needs to be added to enemy/data
+
+
+If you're using Drought's Cave Creator, there are assets in 'Drought's Cave Creator Assets' to need to be added to your preset folder in Drought's Cave Creator.
+
+Parameters of each item (gate HP, wild Pikmin happa type, etc.) are hardcoded, so the code needs to be edited to alter them if you wish to change them. (I plan on adding proper parameters later.)
+
+If a Wild Pikmin is spawned of a type that has not been discovered yet, the pikmin discovery cutscene will play upon floor entry.
+If an onion is set to be spawned of a type that has not been discovered yet, it will not spawn.
+Onion code would need to be changed for onions to function in challenge mode.
+Multiple ship pods, onions, and Hocotate Ships can cause missing particles.
+Downfloors need at least 2 members of the same ID to load, otherwise they will crash. (Not counting Paper Bags)
+Any Downfloor past the second of the same ID will not function properly. (Not counting Paper Bags)
+
+I will be finishing code soon (maybe I finished it by the time you're reading this) that allows for additional enemy spawn groups (think of endless unique Teki F variants) so you don't need to take up precious enemy spawning room for overworld gen objects.
+
+Credit to everyone who has contributed to the Pikmin 2 Decomp project!
+Some of the tekiIcons for the Drought's Cave Creator assets were taken from assets in Drought's Cave Creator, so credit to Drought Ender!
