@@ -30,14 +30,21 @@ struct RandEnemyUnit {
 	void setEnemySlot();
 	void setEnemyTypeWeight();
 	void setEnemyTypeC();
+	void setEnemyTypeI(int);
 	void setEnemyTypeF();
 	void setEnemyTypeB();
 	void setEnemyTypeA();
+	void setEnemyTypeJ(int);
 	void setVersusHibaTypeC();
 	void setVersusEnemyTypeC();
 	void setSlotEnemyTypeC(int&, int);
 	void setUnitRandEnemyTypeC();
 	void makeSetEnemyTypeC(MapNode*, int, EnemyUnit*);
+	void setVersusHibaTypeI(int);
+	void setVersusEnemyTypeI(int);
+	void setSlotEnemyTypeI(int, int);
+	void setUnitRandEnemyTypeI(int);
+	void makeSetEnemyTypeI(MapNode*, BaseGen*, EnemyUnit*, int);
 	void setVersusEnemyTypeF();
 	void setSlotEnemyTypeF(int);
 	void setUnitRandEnemyTypeF();
@@ -52,14 +59,17 @@ struct RandEnemyUnit {
 	void setSlotEnemyTypeA(int&, int&, int);
 	void setUnitRandEnemyTypeA(int&, int, int);
 	void makeSetEnemyTypeA(MapNode*, BaseGen*, EnemyUnit*, int);
+	void setSlotEnemyTypeJ(int&, int&, int, int);
+	void setUnitRandEnemyTypeJ(int&, int, int, int);
+	void makeSetEnemyTypeJ(MapNode*, BaseGen*, EnemyUnit*, int, int);
 	bool isEnemySetGen(MapNode*, BaseGen*);
 
 	MapUnitGenerator* mGenerator; // _00
 	RandMapScore* mMapScore;      // _04
 	int mTotalCount;              // _08, count of all types
 	int mMaxEnemies;              // _0C
-	int mTypeCount[4];            // _10, current count of type, see MapTekiTypes enum
-	int mTypeMax[4];              // _20, max for type, see MapTekiTypes enum
+	int mTypeCount[4];            // _10, UNUSED
+	int mTypeMax[4];              // _20, UNUSED. LOOK AT CUSTOMGEN.H
 	MapNode* mMapTile;            // _30
 	BaseGen* mSpawn;              // _34
 	EnemyUnit* mEnemyUnit;        // _38

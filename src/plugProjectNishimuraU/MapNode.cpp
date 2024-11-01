@@ -335,10 +335,43 @@ void MapNode::setEnemyScore()
 		BaseGen* gen     = enemy->mSpawn;
 		int score        = 0;
 		if (gen) {
-			if (gen->mSpawnType == BaseGen::CGT_EnemyEasy) {
-				score = 2;
-			} else if (gen->mSpawnType == BaseGen::CGT_EnemyHard) {
-				score = 10;
+			switch(gen->mSpawnType) {
+				case BaseGen::CGT_Easy4:
+				case BaseGen::CGT_EnemyEasy:
+					score = 2;
+					break;
+				case BaseGen::CGT_NewEnemy1:
+				case BaseGen::CGT_NewEnemy2:
+				case BaseGen::CGT_NewEnemy3:
+				case BaseGen::CGT_NewEnemy4:
+					score = 5;
+					break;
+				case BaseGen::CGT_NewEnemy6:
+				case BaseGen::CGT_NewEnemy7:
+				case BaseGen::CGT_NewEnemy8:
+				case BaseGen::CGT_NewEnemy9:
+					score = 8;
+					break;
+				case BaseGen::CGT_NewEnemy10:
+				case BaseGen::CGT_NewEnemy11:
+				case BaseGen::CGT_NewEnemy12:
+				case BaseGen::CGT_NewEnemy13:
+				case BaseGen::CGT_EnemyHard:
+					score = 10;
+					break;
+				case BaseGen::CGT_NewEnemy14:
+				case BaseGen::CGT_NewEnemy15:
+				case BaseGen::CGT_NewEnemy16:
+				case BaseGen::CGT_NewEnemy17:
+					score = 15;
+					break;
+				case BaseGen::CGT_Easy2:
+					score = 1;
+					break;
+				case BaseGen::CGT_NewEnemy5:
+				case BaseGen::CGT_Easy3:
+					score = 3;
+					break;
 			}
 		}
 

@@ -1054,6 +1054,7 @@
       ["plugProjectNishimuraU/RandMapChecker", true],
       ["plugProjectNishimuraU/RandMapUnit", false],
       ["plugProjectNishimuraU/RandEnemyUnit", false],
+      ["plugProjectNishimuraU/RandEnemyUnitMod", true],
       ["plugProjectNishimuraU/DoorNode", true],
       ["plugProjectNishimuraU/MapUnitGenerator", true],
       ["plugProjectNishimuraU/MapCreator", true],
